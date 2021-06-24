@@ -13,7 +13,6 @@ if (quoteDisplayElement && quoteInputElement){
 
         quoteCharacters.forEach((characterSpan, index) => {
             const character = inputValueCharacters[index];
-            console.log(characterSpan);
             if (!character){
                 characterSpan.classList.remove('correct');
                 characterSpan.classList.remove('incorrect')
@@ -39,7 +38,8 @@ function getRandomTextQuote(){
     .then(response => response.json())
     .then(data => data.content)
 }
-console.log(new Date().getFullYear());
+
+//console.log(new Date().getFullYear());
 
 let startTime;
 function startTimer(){
