@@ -23,7 +23,7 @@ body{
 
 .main-container{
     border: 15px solid black;
-    max-width: 919px;
+    max-width: 924px;
     height: 490px;
     top: 100px;
     margin: 0 auto;
@@ -33,6 +33,9 @@ body{
     border-top-left-radius: 20px 20px;
     border-top-right-radius: 20px 20px;
     padding: 32px;
+    -webkit-box-shadow: 0px 0px 0px 2px rgba(205,206,208,1);
+    -moz-box-shadow: 0px 0px 0px 2px rgba(205,206,208,1);
+    box-shadow: 0px 0px 0px 2px rgba(205,206,208,1);
 }
 
 .container{
@@ -51,6 +54,7 @@ body{
 
 .quote-display{
     margin-bottom: 1rem;
+    font-size: 1.3rem;
     margin-left: calc(1rem + 2px);
     margin-right: calc(1rem + 2px);
 }
@@ -65,7 +69,8 @@ body{
     resize: none;
     padding: .5rem 1rem;
     width: 100%;
-    font-size: 1rem;
+    font-size: 1.3rem;
+    margin-top: 32px;
 }
 
 .quote-input:focus{
