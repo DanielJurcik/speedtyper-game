@@ -10,8 +10,8 @@ body{
     align-items: center;
     margin: 0;
     min-height: 100vh;
-    background-color: aquamarine;
-    background-image: url("/bcg2.jpg");
+    background-color: white;
+    background-image: url("/img/wave.svg");
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
@@ -24,7 +24,7 @@ body{
 .main-container{
     border: 15px solid black;
     width: 924px;
-    height: 490px;
+    min-height: 490px;
     top: 300px;
     margin: 0 auto;
     display: flex;
@@ -36,37 +36,42 @@ body{
     -webkit-box-shadow: 0px 0px 0px 2px rgba(205,206,208,1);
     -moz-box-shadow: 0px 0px 0px 2px rgba(205,206,208,1);
     box-shadow: 0px 0px 0px 2px rgba(205,206,208,1);
+    filter: drop-shadow(20px 10px 4px #35353555);
 }
 
 .container{
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     padding: 1rem;
     border-radius: .5rem;
     background-color: white;
+    position: relative;
 }
 
 .timer{
-    position: absolute;
-    top: 3rem;
+    text-align: center;
+    margin-bottom: 16px;
     font-size: 3rem;
-    color: coral;
+    color: #0099ff;
     font-weight: bold;
 }
 
 .quote-display{
     margin-bottom: 1rem;
     font-size: 22px;
-    margin-left: calc(1rem + 2px);
-    margin-right: calc(1rem + 2px);
+    margin-left: calc(1rem + 3px);
+    margin-right: calc(1rem + 3px);
 }
 
 .quote-input{
     outline: none;
     background-color: transparent;
-    border: 2px solid red;
+    border: 3px solid #97d1f8;
     border-radius: 16px;
     max-width: 100%;
-    margin: auto;
     resize: none;
     padding: .5rem 1rem;
     width: 100%;
@@ -75,14 +80,24 @@ body{
 }
 
 .quote-input:focus{
-    border-color: black
+    border-color: #0099ff;
 }
 
 .correct{
-    color: green;
+    color: yellowgreen;
 }
 
 .incorrect{
     color: red;
     text-decoration: underline;
+}
+
+.page-logo{
+    width: 300px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.laptop-keyboard{
+    filter: drop-shadow(20px 10px 4px #35353555);
 }
