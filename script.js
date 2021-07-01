@@ -4,6 +4,9 @@ const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random';
 const quoteInputElement = document.querySelector("#quoteInput");
 const quoteDisplayElement = document.querySelector('#quoteDisplay');
 const timerElement = document.querySelector('#timer'); 
+const startButtonElement = document.querySelector('#start-button'); 
+const topLogoElement = document.querySelector('#top-page-logo');
+let numberOfCorrect = 0; 
 
 if (quoteDisplayElement && quoteInputElement){
     quoteInputElement.addEventListener("input", () =>{
@@ -20,7 +23,11 @@ if (quoteDisplayElement && quoteInputElement){
                 return;
             }
             if (character === characterSpan.innerText){
-                characterSpan.classList.add('correct');
+                if (!characterSpan.classList.contains('correct')) {
+                    characterSpan.classList.add('correct');
+                    numberOfCorrect++;
+                    console.log(numberOfCorrect);
+                }      
                 characterSpan.classList.remove('incorrect');
             } else {
                 characterSpan.classList.add('incorrect');
@@ -30,6 +37,15 @@ if (quoteDisplayElement && quoteInputElement){
         })
 
         if (correct) getNextTextQuote();
+    })
+}
+
+if(startButtonElement){
+    startButtonElement.addEventListener("click",()=>{
+        startButtonElement.style.display = "none";
+        getNextTextQuote();
+        if (quoteInputElement) quoteInputElement.focus();
+        if (topLogoElement) topLogoElement.style.visibility = "visible";
     })
 }
 
@@ -46,8 +62,11 @@ function startTimer(){
     timerElement.innerText = 0;
     startTime = new Date();
     setInterval(() => {
-        timerElement.innerText = getTimerTime();
-    },1000)
+        let currentTime = getTimerTime();
+        const minute = 60;
+        let typeSpeed = numberOfCorrect/currentTime*minute;
+        timerElement.innerText = currentTime +" - "+ Math.round(typeSpeed);
+    },100)
 }
 
 function getTimerTime(){
@@ -67,5 +86,3 @@ async function getNextTextQuote(){
 
     startTimer();
 }
-
-getNextTextQuote();

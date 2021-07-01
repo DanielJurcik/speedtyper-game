@@ -1,6 +1,12 @@
 *{
     box-sizing: border-box;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 body{
@@ -11,6 +17,19 @@ body{
     margin: 0;
     min-height: 100vh;
     background-color: white;
+    background-image: url("/img/bcgCharacters.jpg");
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.bcg-overlay{
+    position: absolute;
+    min-height: 100vh;
     background-image: url("/img/wave.svg");
     width: 100%;
     height: 100vh;
@@ -32,7 +51,6 @@ body{
     background-color: #fff;
     border-top-left-radius: 20px 20px;
     border-top-right-radius: 20px 20px;
-    padding: 32px;
     -webkit-box-shadow: 0px 0px 0px 2px rgba(205,206,208,1);
     -moz-box-shadow: 0px 0px 0px 2px rgba(205,206,208,1);
     box-shadow: 0px 0px 0px 2px rgba(205,206,208,1);
@@ -45,7 +63,7 @@ body{
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: .5rem;
     background-color: white;
     position: relative;
@@ -67,6 +85,7 @@ body{
 }
 
 .quote-input{
+    position: relative;
     outline: none;
     background-color: transparent;
     border: 3px solid #97d1f8;
@@ -79,12 +98,46 @@ body{
     margin-top: 32px;
 }
 
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-button{
+    flex-direction: column;
+    position: absolute;
+    text-decoration: none;
+    padding: 16px;
+    background-color: #0099ff;
+    opacity: 1;
+    color: white;
+    letter-spacing: 8px;
+    margin-top: 32px;
+    z-index: 10;
+    width: 100%;
+    font-weight: 300;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    transition: 0.3s;
+}
+
+.start-button:hover{
+    cursor: pointer;
+    background-color: #007bfff8;
+    letter-spacing: 10px;
+}
+
 .quote-input:focus{
     border-color: #0099ff;
 }
 
 .correct{
-    color: yellowgreen;
+    color: #0099ff;
 }
 
 .incorrect{
@@ -93,7 +146,7 @@ body{
 }
 
 .page-logo{
-    width: 300px;
+    width: 280px;
     margin-top: 32px;
     margin-bottom: 32px;
 }
