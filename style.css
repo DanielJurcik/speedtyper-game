@@ -154,3 +154,15 @@ body{
 .laptop-keyboard{
     filter: drop-shadow(20px 10px 4px #35353555);
 }
+
+#type-speed-text{
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    font-size: 18px;
+}
+
+.speed-number{
+    color: #0099ff;
+    font-weight: 800;
+}

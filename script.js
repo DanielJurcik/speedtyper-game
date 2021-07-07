@@ -6,6 +6,7 @@ const quoteDisplayElement = document.querySelector('#quoteDisplay');
 const timerElement = document.querySelector('#timer'); 
 const startButtonElement = document.querySelector('#start-button'); 
 const topLogoElement = document.querySelector('#top-page-logo');
+const typeSpeedTextElement = document.querySelector('.speed-number');
 let numberOfCorrect = 0; 
 
 if (quoteDisplayElement && quoteInputElement){
@@ -65,7 +66,8 @@ function startTimer(){
         let currentTime = getTimerTime();
         const minute = 60;
         let typeSpeed = numberOfCorrect/currentTime*minute;
-        timerElement.innerText = currentTime +" - "+ Math.round(typeSpeed);
+        timerElement.innerText = currentTime;
+        if (typeSpeed>1) typeSpeedTextElement.innerText = Math.round(typeSpeed);
     },100)
 }
 
@@ -74,6 +76,8 @@ function getTimerTime(){
 }
 
 async function getNextTextQuote(){
+    currentTime = 0;
+    numberOfCorrect = 0;
     if (!quoteDisplayElement || !quoteInputElement) return;
     const quote = await getRandomTextQuote();
     quoteDisplayElement.innerHTML = '';
