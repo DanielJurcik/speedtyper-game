@@ -1,12 +1,13 @@
 //API
 const RANDOM_QUOTE_API_URL = 'https://api.quotable.io/random';
-//ELEMNTS
+//ELEMENTS
 const quoteInputElement = document.querySelector("#quoteInput");
 const quoteDisplayElement = document.querySelector('#quoteDisplay');
 const timerElement = document.querySelector('#timer'); 
 const startButtonElement = document.querySelector('#start-button'); 
 const topLogoElement = document.querySelector('#top-page-logo');
 const typeSpeedTextElement = document.querySelector('.speed-number');
+const resetGameButton = document.querySelector('#reset-btn');
 let numberOfCorrect = 0; 
 
 if (quoteDisplayElement && quoteInputElement){
@@ -56,8 +57,6 @@ function getRandomTextQuote(){
     .then(data => data.content)
 }
 
-//console.log(new Date().getFullYear());
-
 let startTime;
 function startTimer(){
     timerElement.innerText = 0;
@@ -87,6 +86,9 @@ async function getNextTextQuote(){
         quoteDisplayElement.append(characterQuoteSpan);
     });
     quoteInputElement.value = null;
-
     startTimer();
 }
+
+resetGameButton.addEventListener("click",() =>{
+    getNextTextQuote();
+});

@@ -14,21 +14,24 @@
     <div class="bcg-overlay"></div>
     <img id="top-page-logo" src="./img/SpeedTyperLogoTrans.png" class="page-logo" style="visibility: hidden;">
     <div class="main-container">´
-        <a id="start-button" class="start-button"><img src="./img/SpeedTyperLogoWhite.png" class="page-logo">START TYPING &#10095;</a>
+        <a id="start-button" class="start-button">
+            <img src="./img/SpeedTyperLogoWhite.png" class="page-logo">
+            START TYPING &#10095;
+        </a>
         <div class="container">
             <div id="type-speed-text">
-                Typing speed / per min : 
+                <span>Typing speed / per min :</span>
                 <span class="speed-number">0</span>
             </div>
             <div class="timer" id="timer"></div>
-            <div class="quote-display" id="quoteDisplay"></div>
+            <div id="reset-btn">
+                <p>NEXT TEXT / RESET</p>
+            </div>
+            <div class="quote-display" id="quoteDisplay">Loading ...</div>
             <div class="input-container">
-                
                 <textarea id="quoteInput" rows="6" class="quote-input" autofocus placeholder="Start typing here ..."></textarea>
             </div>
-            
         </div>
-
     </div>
     <img class="laptop-keyboard" src="./img/ntbImage2.png">
 </body>

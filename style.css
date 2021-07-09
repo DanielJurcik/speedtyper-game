@@ -162,7 +162,35 @@ body{
     font-size: 18px;
 }
 
+#reset-btn p{
+    padding: 8px 16px 8px 16px;
+    background-color: #0099ff;
+    color: #fff;
+    border-radius: 16px;
+    position: absolute;
+    top: 48px;
+    right: 32px;
+    letter-spacing: 2px;
+    font-size: 12px;
+    transition: 0.2s ease-in-out;
+}
+
+#reset-btn p:hover{
+    background-color: #0485dc;
+    cursor: pointer;
+}
+
+#reset-btn p:active{
+    transform: scale(1.2);
+}
+
 .speed-number{
     color: #0099ff;
     font-weight: 800;
+}
+
+@media only screen and (max-width: 1000px) {
+    .main-container{
+        width: 100%;
+    }
 }
